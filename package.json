@@ -1,0 +1,18 @@
+{
+  "name": "Carbon",
+  "main": "./lib/carbon",
+  "version": "0.0.0",
+  "description": "Copy a screenshot of your code to the clipboarrd",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "carbon:toggle"
+  },
+  "repository": "https://github.com/atom/carbon",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}

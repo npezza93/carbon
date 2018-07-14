@@ -1,0 +1,131 @@
+{
+  "syntaxTheme": {
+    "type": "string",
+    "default": "one-dark",
+    "enum": [
+      "3024-night",
+      "blackboard",
+      "base16-dark",
+      "base16-light",
+      "cobalt",
+      "dracula",
+      "duotone-dark",
+      "hopscotch",
+      "material",
+      "monokai",
+      "oceanic-next",
+      "one-dark",
+      "panda-syntax",
+      "paraiso-dark",
+      "seti",
+      "solarized dark",
+      "solarized light",
+      "tomorrow-night-bright",
+      "lucario",
+      "twilight",
+      "verminal",
+      "yeti",
+      "zenburn"
+    ]
+  },
+  "windowTheme": {
+    "type": "string",
+    "default": "one-dark",
+    "enum": [
+      "none",
+      "sharp",
+      "bw"
+    ]
+  },
+  "fontFamily": {
+    "type": "string",
+    "default": "Fira Code",
+    "enum": [
+      "dm",
+      "Anonymous Pro",
+      "Droid Sans Mono",
+      "Fantasque Sans Mono",
+      "Fira Code",
+      "Monoid",
+      "Hack",
+      "IBM Plex Mono",
+      "Iosevka",
+      "Inconsolata",
+      "Source Code Pro",
+      "Ubuntu Mono"
+    ]
+  },
+  "fontSize": {
+    "type": "number",
+    "default": 18,
+    "minimum": 10,
+    "maximum": 18
+  },
+  "windowControls": {
+    "type": "boolean",
+    "default": true
+  },
+  "lineNumbers": {
+    "type": "boolean",
+    "default": false
+  },
+  "autoAdjustWidth": {
+    "type": "boolean",
+    "default": true
+  },
+  "lineHeight": {
+    "type": "number",
+    "default": 133,
+    "minimum": 90,
+    "maximum": 250
+  },
+  "verticalPadding": {
+    "type": "number",
+    "default": 48,
+    "minimum": 0,
+    "maximum": 200
+  },
+  "horizontalPadding": {
+    "type": "number",
+    "default": 32,
+    "minimum": 0,
+    "maximum": 100
+  },
+  "dropShadow": {
+    "type": "boolean",
+    "default": true
+  },
+  "dropShadowYOffset": {
+    "type": "number",
+    "default": 20,
+    "minimum": 0,
+    "maximum": 100
+  },
+  "dropShadowBlurRadius": {
+    "type": "number",
+    "default": 68,
+    "minimum": 0,
+    "maximum": 100
+  },
+  "squaredImage": {
+    "type": "boolean",
+    "default": false
+  },
+  "watermark": {
+    "type": "boolean",
+    "default": false
+  },
+  "exportSize": {
+    "type": "string",
+    "default": "2x",
+    "enum": [
+      "1x",
+      "2x",
+      "4x"
+    ]
+  },
+  "background": {
+    "type": "color",
+    "default": "rgba(0,0,0,0)"
+  }
+}
