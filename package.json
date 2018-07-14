@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "description": "Copy a screenshot of your code to the clipboarrd",
   "keywords": [
+    "carbon"
   ],
   "activationCommands": {
     "atom-workspace": "carbon:toggle"
   },
-  "repository": "https://github.com/atom/carbon",
+  "repository": "https://github.com/npezza93/carbon",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
