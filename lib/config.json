@@ -30,7 +30,7 @@
   },
   "windowTheme": {
     "type": "string",
-    "default": "one-dark",
+    "default": "none",
     "enum": [
       "none",
       "sharp",
