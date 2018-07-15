@@ -7,7 +7,7 @@
     "carbon"
   ],
   "activationCommands": {
-    "atom-workspace": "carbon:toggle"
+    "atom-workspace": "carbon:copy"
   },
   "repository": "https://github.com/npezza93/carbon",
   "license": "MIT",

@@ -8,15 +8,14 @@ module.exports = Carbon =
   activate: (state) ->
     @subscriptions = new CompositeDisposable
 
-    @subscriptions.add atom.commands.add 'atom-workspace', 'carbon:toggle': =>
-      @toggle()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'carbon:copy': =>
+      @copy()
 
   deactivate: ->
     @subscriptions.dispose()
 
   serialize: ->
 
-  toggle: ->
     buffer = atom.workspace.getActiveTextEditor().selections[0].getText()
 
     if buffer.length > 0

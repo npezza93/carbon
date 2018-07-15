@@ -1,8 +1,8 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'command': 'carbon:toggle'
       'label': 'Copy code screenshot to clipboard'
+      'command': 'carbon:copy'
     }
   ]
 'menu': [
@@ -12,8 +12,8 @@
       'label': 'Carbon'
       'submenu': [
         {
-          'command': 'carbon:toggle'
           'label': 'Copy code screenshot to clipboard'
+          'command': 'carbon:copy'
         }
       ]
     ]
