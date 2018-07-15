@@ -1,5 +1,7 @@
-{CompositeDisposable} = require 'atom'
+{ CompositeDisposable } = require 'atom'
+{ nativeImage }         = require 'electron'
 needle                  = require 'needle'
+clipboard               = require 'clipboard'
 
 config                  = require('./config.json')
 
@@ -64,3 +66,8 @@ module.exports = Carbon =
     JSON.stringify({
       state: Buffer.from(JSON.stringify(state)).toString("base64")
     })
+
+  copyToClipboard: (dataUrl) ->
+    clipboard.writeImage(nativeImage.createFromDataURL(dataUrl))
+
+    atom.notifications.addSuccess("Image copied to clipboard!")
