@@ -1,23 +1,42 @@
 {CompositeDisposable} = require 'atom'
+needle                  = require 'needle'
 
 config                  = require('./config.json')
 
 module.exports = Carbon =
   subscriptions: null
   config: config
+  url: 'https://carbon.now.sh/image'
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable
 
     @subscriptions.add atom.commands.add 'atom-workspace', 'carbon:copy': =>
-      @copy()
+      buffer = atom.workspace.getActiveTextEditor().selections[0].getText()
+
+      if buffer.length > 0
+        @fetchImage(buffer, @copyToClipboard.bind(this))
+      else
+        atom.notifications.addError("Please select text")
 
   deactivate: ->
     @subscriptions.dispose()
 
   serialize: ->
 
-    buffer = atom.workspace.getActiveTextEditor().selections[0].getText()
+  fetchImage: (buffer, callback) ->
+    needle('post', @url, @body(buffer), { json: true }).then((response) =>
+      if response.statusCode == 200
+        console.log JSON.stringify(response.body.dataUrl)
+        callback(response.body.dataUrl)
+      else
+        @fetchError "#{response.statusCode} - #{response.statusMessage}"
+    ).catch (err) =>
+      @fetchError err
+
+  fetchError: (error) ->
+    atom.notifications.addFatalError "Error fetching from carbon: #{error}"
+
   settings: ->
     currentSettings = atom.config.get('carbon')
     {
@@ -39,7 +58,9 @@ module.exports = Carbon =
       es: currentSettings.exportSize
     }
 
-    if buffer.length > 0
-      atom.notifications.addSuccess("Text copied")
-    else
-      atom.notifications.addError("Please select text")
+  body: (code) ->
+    state = Object.assign(@settings(), { code: code })
+    console.log state
+    JSON.stringify({
+      state: Buffer.from(JSON.stringify(state)).toString("base64")
+    })
