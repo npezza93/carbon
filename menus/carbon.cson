@@ -1,19 +1,19 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle carbon'
       'command': 'carbon:toggle'
+      'label': 'Copy code screenshot to clipboard'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'carbon'
+      'label': 'Carbon'
       'submenu': [
         {
-          'label': 'Toggle'
           'command': 'carbon:toggle'
+          'label': 'Copy code screenshot to clipboard'
         }
       ]
     ]
