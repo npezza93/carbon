@@ -29,7 +29,6 @@ module.exports = Carbon =
   fetchImage: (buffer, callback) ->
     needle('post', @url, @body(buffer), { json: true }).then((response) =>
       if response.statusCode == 200
-        console.log JSON.stringify(response.body.dataUrl)
         callback(response.body.dataUrl)
       else
         @fetchError "#{response.statusCode} - #{response.statusMessage}"
@@ -62,7 +61,7 @@ module.exports = Carbon =
 
   body: (code) ->
     state = Object.assign(@settings(), { code: code })
-    console.log state
+
     JSON.stringify({
       state: Buffer.from(JSON.stringify(state)).toString("base64")
     })
