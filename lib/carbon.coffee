@@ -32,8 +32,7 @@ module.exports = Carbon =
         callback(response.body.dataUrl)
       else
         @fetchError "#{response.statusCode} - #{response.statusMessage}"
-    ).catch (err) =>
-      @fetchError err
+    ).catch(@fetchError)
 
   fetchError: (error) ->
     atom.notifications.addFatalError "Error fetching from carbon: #{error}"
