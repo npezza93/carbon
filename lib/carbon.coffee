@@ -40,7 +40,9 @@ module.exports = Carbon =
   settings: ->
     currentSettings = atom.config.get('carbon')
     {
+      l: "auto"
       t: currentSettings.syntaxTheme
+      bg: currentSettings.background
       wt: currentSettings.windowTheme
       wc: currentSettings.windowControls
       fm: currentSettings.fontFamily
