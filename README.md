@@ -4,4 +4,4 @@
 
 # Carbon For Atom
 
-🎨 Create images of your code directly from inside Atom and copy them directly to the clipboard
+🎨 Create images of your code directly from inside Atom using [Carbon](https://carbon.now.sh) and copy them directly to the clipboard
