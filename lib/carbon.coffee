@@ -61,11 +61,9 @@ module.exports = Carbon =
     }
 
   body: (code) ->
-    state = Object.assign(@settings(), { code: code })
+    state = JSON.stringify(Object.assign(@settings(), { code: code }))
 
-    JSON.stringify({
-      state: Buffer.from(JSON.stringify(state)).toString("base64")
-    })
+    JSON.stringify({ state: Buffer.from(state).toString("base64") })
 
   copyToClipboard: (dataUrl) ->
     clipboard.writeImage(nativeImage.createFromDataURL(dataUrl))
