@@ -1,7 +1,7 @@
 {
   "name": "carbon",
   "main": "./lib/carbon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Copy a screenshot of your code to the clipboarrd",
   "keywords": [
     "carbon"
