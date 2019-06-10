@@ -8,7 +8,7 @@ config                  = require('./config.json')
 module.exports = Carbon =
   subscriptions: null
   config: config
-  url: 'https://carbon.now.sh/image'
+  url: 'https://carbon.now.sh/api/image'
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable
