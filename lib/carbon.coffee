@@ -29,7 +29,7 @@ module.exports = Carbon =
   fetchImage: (buffer, callback) ->
     needle('post', @url, @body(buffer), { json: true }).then((response) =>
       if response.statusCode == 200
-        callback(response.body.dataUrl)
+        callback(response.body.toString())
       else
         @fetchError "#{response.statusCode} - #{response.statusMessage}"
     ).catch(@fetchError)
